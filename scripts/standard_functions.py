@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 
-def genpassword(forbidden_chars={'!* '}, passwordLength=8):
-
+def genpassword(forbidden_chars:set={'!* '} , password_length:int=8) -> str:
     """
     This function will generate a random password
 
@@ -22,14 +21,6 @@ def genpassword(forbidden_chars={'!* '}, passwordLength=8):
 
     str_characters=''.join(characters)
 
-    new_password = ''.join(random.choice(str_characters) for i in range(passwordLength))
-
-    print(forbidden_chars)
-    print(str(passwordLength))
+    new_password = ''.join(random.choice(str_characters) for i in range(password_length))
 
     return new_password
-
-
-
-#print(genpassword('testchars'))
-#print(genpassword(passwordLength=15, forbidden_chars=r'xedr'))
